@@ -1,18 +1,18 @@
 // Package vreme omogoca zapisovanje/belezenje temperaturnih meritev vremenskih postaj in izracun statistike za le-te
 // Postaje so v slovarju. Ključ je oznaka postaje ("LJ01")
-// Postaje ustrvarjamo s funkcijo [DodajPostajo], mertitve pa s [DodajMeritev]
+// Postaje ustvarjamo s funkcijo [DodajPostajo], meritve pa s [DodajMeritev]
 package vreme
 
 import "fmt"
 
-// Vremenska postaja z imenom, krajem in seznamom temperatur v C
+// Postaja je vremenska postaja z imenom, krajem in seznamom temperatur v C
 type Postaja struct {
 	ime     string
 	kraj    string
 	meritve []float64
 }
 
-// DodajPostajo v slovar doda novo mpostajo z oznako, imenom in krajem. Nima meritev. Če že obstaja, izpiše opozorilo.
+// DodajPostajo v slovar doda novo postajo z oznako, imenom in krajem. Nima meritev. Če že obstaja, izpiše opozorilo.
 func DodajPostajo(postaje map[string]Postaja, oznaka, ime, kraj string) {
 	if _, ok := postaje[oznaka]; ok {
 		fmt.Println("Postaja že obstaja.")
