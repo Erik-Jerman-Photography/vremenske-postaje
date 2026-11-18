@@ -48,7 +48,7 @@ func statistika(postaje map[string]Postaja, oznaka string, stMeritev int) (najni
 		return 0, 0, 0, false
 	}
 
-	if len(p.meritve) < 3 {
+	if len(p.meritve) < stMeritev {
 		return 0, 0, 0, false
 	}
 
